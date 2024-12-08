@@ -2,26 +2,183 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Reset default browser styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Set base font styles */
+body {
+  font-family: 'Geist Sans', sans-serif; /* This will be defined in your layout (localFont) */
+  background-color: #f8f9fa;  /* Light background color for the page */
+  color: #333;  /* Default text color */
+  line-height: 1.6;
+}
+
+/* Utility class to make everything full height */
+html, body {
+  height: 100%;
+}
+
+/* Global container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Styling the header */
+header {
+  background-color: #fff;  /* White background for the header */
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;  /* Light border for separation */
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Header logo */
+header .logo h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Search bar styling */
+header .search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  padding: 5px 15px;
+  background-color: #fff;
+}
+
+header .search-bar input {
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  border-radius: 25px;
+  width: 250px;
+}
+
+header .search-bar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #555;
+}
+
+/* Icon styling */
+header .icons {
+  display: flex;
+  gap: 15px;
+}
+
+header .icons span {
+  font-size: 24px;
+  cursor: pointer;
+  color: #555;
+}
+
+header .icons span:hover {
+  color: #007bff;  /* Hover effect for icons */
+}
+
+/* Main content area */
+main {
+  padding: 20px 0;
+}
+
+/* Footer (if applicable) */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header .logo h1 {
+    font-size: 28px;
+  }
+
+  header .search-bar {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  header .icons {
+    margin-top: 10px;
   }
 }
+
+@media (max-width: 480px) {
+  header .logo h1 {
+    font-size: 24px;
+  }
+
+  header .search-bar input {
+    width: 150px;
+  }
+
+  header .icons span {
+    font-size: 20px;
+  }
+}
+
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.container {
+  padding: 20px;
 }
+
+.main-heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+
