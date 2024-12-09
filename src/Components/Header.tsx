@@ -1,5 +1,7 @@
 import React from "react";
-import { FiSearch, FiSettings } from "react-icons/fi";
+// import { FiSearch, FiSettings } from "react-icons/fi";
+
+
 import { AiOutlineHeart, AiOutlineBell } from "react-icons/ai";
 
 const Header: React.FC = () => {
@@ -22,7 +24,7 @@ const Header: React.FC = () => {
             className="absolute right-3 text-blue-500"
             aria-label="Open search settings"
           >
-            <FiSettings size={18} />
+            {/* <FiSettings size={18} /> */}
           </button>
         </div>
       </div>

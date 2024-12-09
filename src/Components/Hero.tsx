@@ -1,5 +1,6 @@
 
-import React from 'react';
+import React from "react";
+import Image from "next/image"; // Import Image from next/image
 
 const Hero = () => {
   return (
@@ -7,53 +8,47 @@ const Hero = () => {
       <section className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left Card */}
-          <div
-            className="bg-blue-100 p-6 rounded-lg shadow-md"
-            style={{
-              backgroundImage: 'url("/background 2.jpg")', // Replace with your left card image URL
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          >
-            <h2 className="text-3xl w-[272px] font-bold text-[#FFFFFF]  mb-2">
+          <div className="bg-blue-100 p-6 rounded-lg shadow-md bg-cover bg-center relative" style={{ backgroundImage: 'url("/background 2.jpg")' }}>
+            <h2 className="text-3xl w-[272px] font-bold text-[#FFFFFF] mb-2">
               The Best Platform for Car Rental
-            </h2> <br />
+            </h2>
             <p className="text-white mb-6 w-[284px]">
               Ease of doing a car rental safely and reliably. Of course at a low price.
             </p>
             <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
               Rental Car
             </button>
-            <img
-              src="/car.png" // Replace with your car image URL
-              alt="Car"
-              className="mt-4 w-[340px] h-[108px] ml-40 object-cover"
-            />
+            <div className="mt-4 w-[340px] h-[108px] ml-40">
+              <Image
+                src="/car.png" // Replace with your car image URL
+                alt="Car"
+                width={340}
+                height={108}
+                className="object-cover"
+              />
+            </div>
           </div>
 
           {/* Right Card */}
-          <div
-            className="bg-blue-200 p-6 rounded-lg shadow-md"
-            style={{
-              backgroundImage: 'url("background1.jpg")', // Replace with your right card image URL
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          >
+          <div className="bg-blue-200 p-6 rounded-lg shadow-md bg-cover bg-center relative" style={{ backgroundImage: 'url("/background1.jpg")' }}>
             <h2 className="text-3xl font-bold text-[#FFFFFF] w-[272px] mb-2">
               Easy way to rent a car at a low price
-            </h2> <br />
+            </h2>
             <p className="text-white mb-6 w-[284px]">
               Providing cheap car rental services and safe and comfortable facilities.
             </p>
             <button className="bg-[#54A6FF] text-white px-6 py-2 rounded-lg hover:bg-blue-700">
               Rental Car
             </button>
-            <img
-              src="/cars.png" // Replace with your car image URL
-              alt="Car"
-              className="mt-4 w-[340px] h-[108px] ml-40 object-cover"
-            />
+            <div className="mt-4 w-[340px] h-[108px] ml-40">
+              <Image
+                src="/cars.png" // Replace with your car image URL
+                alt="Car"
+                width={340}
+                height={108}
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
 
@@ -71,18 +66,11 @@ const Hero = () => {
               </div>
               <div>
                 <label className="block text-sm mb-1">Date</label>
-                <input
-                  type="date"
-                  className="w-full border rounded-md p-2"
-                />
-                
+                <input type="date" className="w-full border rounded-md p-2" />
               </div>
               <div>
                 <label className="block text-sm mb-1">Time</label>
-                <input
-                  type="time"
-                  className="w-full border rounded-md p-2"
-                />
+                <input type="time" className="w-full border rounded-md p-2" />
               </div>
             </div>
           </div>
@@ -106,17 +94,11 @@ const Hero = () => {
               </div>
               <div>
                 <label className="block text-sm mb-1">Date</label>
-                <input
-                  type="date"
-                  className="w-full border rounded-md p-2"
-                />
+                <input type="date" className="w-full border rounded-md p-2" />
               </div>
               <div>
                 <label className="block text-sm mb-1">Time</label>
-                <input
-                  type="time"
-                  className="w-full border rounded-md p-2"
-                />
+                <input type="time" className="w-full border rounded-md p-2" />
               </div>
             </div>
           </div>
@@ -126,4 +108,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Hero;

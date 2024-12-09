@@ -3,19 +3,20 @@
 
 import React, { useState } from "react";
 import { FaUserFriends, FaGasPump, FaCogs } from "react-icons/fa";
+import Image from "next/image";  // Import Image from next/image
 
 const ProductList: React.FC = () => {
   // Full list of cars
   const allCars = [
-    { id: 1, name: "Koenigsegg", image: "/car.png", price: 99 },
-    { id: 2, name: "Nissan GT-R", image: "/car (2).png", price: 80 },
-    { id: 3, name: "Rolls-Royce", image: "/car (3).png", price: 90 },
-    { id: 4, name: "Audi A8", image: "/car (4).png", price: 75 },
-    { id: 5, name: "Tesla Model X", image: "/car (5).png", price: 95 },
-    { id: 6, name: "BMW X7", image: "/car (6).png", price: 85 },
-    { id: 7, name: "Porsche 911", image: "/car (7).png", price: 110 },
-    { id: 8, name: "Lamborghini Huracan", image: "/car (8).png", price: 120 },
-    { id: 9, name: "Ferrari F8", image: "/car (9).png", price: 130 },
+    { id: 1, name: "Koenigsegg", Image: "/car.png", price: 99 },
+    { id: 2, name: "Nissan GT-R", Image: "/car (2).png", price: 80 },
+    { id: 3, name: "Rolls-Royce", Image: "/car (3).png", price: 90 },
+    { id: 4, name: "Audi A8", Image: "/car (4).png", price: 75 },
+    { id: 5, name: "Tesla Model X", Image: "/car (5).png", price: 95 },
+    { id: 6, name: "BMW X7", Image: "/car (6).png", price: 85 },
+    { id: 7, name: "Porsche 911", Image: "/car (7).png", price: 110 },
+    { id: 8, name: "Lamborghini Huracan", Image: "/car (8).png", price: 120 },
+    { id: 9, name: "Ferrari F8", Image: "/car (9).png", price: 130 },
   ];
 
   // State to handle visible cars
@@ -43,10 +44,12 @@ const ProductList: React.FC = () => {
                 className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition"
               >
                 {/* Car Image */}
-                <img
-                  src={car.image}
+                <Image
+                  src={car.Image}
                   alt={car.name}
-                  className="w-full h-[250px] object-cover rounded-[10px] mb-4" // Adjusted height and width
+                  width={340} // Add width for optimization
+                  height={250} // Add height for optimization
+                  className="w-full object-cover rounded-[10px] mb-4"
                 />
 
                 {/* Car Name */}
